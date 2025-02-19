@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "purchaseInvoice")
-public class purchaseInvoice {
+public class PurchaseInvoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)

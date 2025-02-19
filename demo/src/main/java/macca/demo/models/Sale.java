@@ -42,8 +42,8 @@ public class Sale {
     private Double total;
 
     @OneToMany(mappedBy = "sale")
-    private List<saleDetail> saleDetails;
+    private List<SaleDetail> SaleDetails;
 
     @OneToOne(mappedBy = "sale")
-    private saleInvoice saleInvoice;
+    private SaleInvoice saleInvoice;
 }

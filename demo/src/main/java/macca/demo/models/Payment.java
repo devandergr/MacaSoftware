@@ -21,10 +21,10 @@ public class Payment {
     private List<Sale> salePayment2;
 
     @OneToMany(mappedBy = "payment1")
-    private List<purchaseInvoice> purchaseInvoicesP1;
+    private List<PurchaseInvoice> purchaseInvoicesP1;
 
     @OneToMany(mappedBy = "payment2")
-    private List<purchaseInvoice> purchaseInvoicesP2;
+    private List<PurchaseInvoice> purchaseInvoicesP2;
 
     @OneToMany(mappedBy = "payment1")
     private List<Credit> creditsPayment1;
@@ -66,19 +66,19 @@ public class Payment {
         this.salePayment2 = salePayment2;
     }
 
-    public List<purchaseInvoice> getPurchaseInvoicesP1() {
+    public List<PurchaseInvoice> getPurchaseInvoicesP1() {
         return purchaseInvoicesP1;
     }
 
-    public void setPurchaseInvoicesP1(List<purchaseInvoice> purchaseInvoicesP1) {
+    public void setPurchaseInvoicesP1(List<PurchaseInvoice> purchaseInvoicesP1) {
         this.purchaseInvoicesP1 = purchaseInvoicesP1;
     }
 
-    public List<purchaseInvoice> getPurchaseInvoicesP2() {
+    public List<PurchaseInvoice> getPurchaseInvoicesP2() {
         return purchaseInvoicesP2;
     }
 
-    public void setPurchaseInvoicesP2(List<purchaseInvoice> purchaseInvoicesP2) {
+    public void setPurchaseInvoicesP2(List<PurchaseInvoice> purchaseInvoicesP2) {
         this.purchaseInvoicesP2 = purchaseInvoicesP2;
     }
 

@@ -21,7 +21,7 @@ public class Supplier {
     private String city;
 
     @OneToMany(mappedBy = "supplier")
-    private List<purchaseInvoice> purchaseInvoices;
+    private List<PurchaseInvoice> PurchaseInvoices;
 
     // Getters & Setters
 
@@ -89,11 +89,11 @@ public class Supplier {
         this.city = city;
     }
 
-    public List<purchaseInvoice> getPurchaseInvoices() {
-        return purchaseInvoices;
+    public List<PurchaseInvoice> getPurchaseInvoices() {
+        return PurchaseInvoices;
     }
 
-    public void setPurchaseInvoices(List<purchaseInvoice> purchaseInvoices) {
-        this.purchaseInvoices = purchaseInvoices;
+    public void setPurchaseInvoices(List<PurchaseInvoice> PurchaseInvoices) {
+        this.PurchaseInvoices = PurchaseInvoices;
     }
 }
