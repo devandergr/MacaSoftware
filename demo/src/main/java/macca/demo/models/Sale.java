@@ -22,7 +22,7 @@ public class Sale {
     private Storage storage;
 
     @ManyToOne
-    @JoinColumn(name = "inventory")
+    @JoinColumn(name = "id_inventory")
     private Inventory inventory;
 
     private Date dateSale;
@@ -37,12 +37,9 @@ public class Sale {
     @ManyToOne
     @JoinColumn(name = "id_payment2")
     private Payment payment2;
-    private Double getValuePayment2;
+    private Double ValuePayment2;
 
     private Double total;
-
-    @OneToMany(mappedBy = "sale")
-    private List<SaleDetail> SaleDetails;
 
     @OneToOne(mappedBy = "sale")
     private SaleInvoice saleInvoice;
