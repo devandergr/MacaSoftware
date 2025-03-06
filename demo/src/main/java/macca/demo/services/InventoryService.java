@@ -1,6 +1,7 @@
 package macca.demo.services;
 
 import macca.demo.models.Inventory;
+import macca.demo.models.Storage;
 import macca.demo.repositories.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,16 +18,13 @@ public class InventoryService {
     }
 
     public Inventory saveInventory(Inventory inventory) {
-        if (inventory.getReference() == null && inventory.getFactory() == null && inventory.getMaterial() == null
-                && inventory.getSize() == null & inventory.getSellingPrice() == null ) {
+        if (inventory.getReference() == null || inventory.getFactory() == null || inventory.getMaterial() == null
+                || inventory.getSize() == null || inventory.getSellingPrice() == null ) {
             throw new RuntimeException("No pueden existir valores nulos");
         }
-        if (inventory.getQuantity() == null && inventory.getUnitCost() == null) {
+        if (inventory.getQuantity() == null || inventory.getUnitCost() == null) {
             inventory.setQuantity(0);  // Por defecto, si no se proporciona, se establece en 0
             inventory.setUnitCost(0.0); // Por defecto, si no se proporciona, se establece en 0
-        }
-        else {
-            throw new RuntimeException("La referencia no puede ser nula");
         }
         return inventoryRepository.save(inventory);
     }
@@ -51,4 +49,14 @@ public class InventoryService {
         }
         return null;
     }
+
+    public List<Inventory> findByReference(String reference) {
+        return inventoryRepository.findByReference(reference);
+    }
+
+    public List<Inventory> findByReferenceAndSize(String reference, String size) {
+        return inventoryRepository.findByReferenceAndSize(reference, size);
+    }
+
+
 }
