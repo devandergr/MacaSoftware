@@ -75,6 +75,9 @@ public class EmployeeService {
                     existingUser.setAddress(updatedUser.getAddress());
                 }
 
+                if (updatedUser.getUserType() != null) {
+                    existingUser.setUserType(updatedUser.getUserType());
+                }
                 userRepository.save(existingUser);
             }
 
