@@ -32,16 +32,6 @@ public class AuthController {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody User user) {
-        ResponseEntity<?> response = authService.registerUser(user);
-        if (response.getStatusCode().equals(HttpStatus.OK)) {
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        } else {
-            return response;
-        }
-    }
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) throws Exception {
         try {

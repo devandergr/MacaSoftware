@@ -1,7 +1,6 @@
 package macca.demo.services;
 
 import macca.demo.models.Inventory;
-import macca.demo.models.Storage;
 import macca.demo.repositories.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
